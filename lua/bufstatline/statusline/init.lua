@@ -1,4 +1,4 @@
-local statusline_opts = require("nvchad_ui").statusline
+local statusline_opts = require("bufstatline").statusline
 
 return {
    setup = function(opts)
@@ -6,7 +6,7 @@ return {
 
       vim.g.statusline_sep_style = statusline_opts.separator_style
 
-      local modules = require "nvchad_ui.statusline.modules"
+      local modules = require "bufstatline.statusline.modules"
 
       if statusline_opts.overriden_modules then
          modules = vim.tbl_deep_extend("force", modules, statusline_opts.overriden_modules())
